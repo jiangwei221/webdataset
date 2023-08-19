@@ -32,11 +32,13 @@ def base_plus_ext(path):
     Returns:
         path with all extensions removed
     """
-    print("base_plus_ext", path)
+    print("base_plus_ext1", path)
     match = re.match(r"^((?:.*/|)[^.]+)[.]([^/]*)$", path)
     if not match:
         return None, None
-    print("base_plus_ext", match.group(1), match.group(2))
+    base, ext = os.path.splitext(path)
+    print("base_plus_ext2", base, ext)
+    print("base_plus_ext3", match.group(1), match.group(2))
     return match.group(1), match.group(2)
 
 
