@@ -33,8 +33,11 @@ def base_plus_ext(path):
         path with all extensions removed
     """
     print("base_plus_ext", path)
-    base, ext = os.path.splitext(path)
-    return base, ext[1:]
+    match = re.match(r"^((?:.*/|)[^.]+)[.]([^/]*)$", path)
+    if not match:
+        return None, None
+    print("base_plus_ext", match.group(1), match.group(2))
+    return match.group(1), match.group(2)
 
 
 def valid_sample(sample: Dict[str, Any]) -> bool:
