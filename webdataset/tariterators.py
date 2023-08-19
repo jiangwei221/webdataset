@@ -32,6 +32,7 @@ def base_plus_ext(path):
     Returns:
         path with all extensions removed
     """
+    print("base_plus_ext", path)
     base, ext = os.path.splitext(path)
     return base, ext[1:]
 
