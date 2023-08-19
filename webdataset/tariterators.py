@@ -9,7 +9,7 @@
 
 from typing import Any, Callable, Dict, Iterable, Iterator, Optional, Set, Tuple
 
-import random, re, tarfile
+import random, re, tarfile, os
 
 import braceexpand
 
@@ -32,10 +32,8 @@ def base_plus_ext(path):
     Returns:
         path with all extensions removed
     """
-    match = re.match(r"^((?:.*/|)[^.]+)[.]([^/]*)$", path)
-    if not match:
-        return None, None
-    return match.group(1), match.group(2)
+    base, ext = os.path.splitext(path)
+    return base, ext[1:]
 
 
 def valid_sample(sample: Dict[str, Any]) -> bool:
