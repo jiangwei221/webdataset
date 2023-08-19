@@ -37,9 +37,9 @@ def base_plus_ext(path):
     if not match:
         return None, None
     base, ext = os.path.splitext(path)
-    print("base_plus_ext2", base, ext[1:])
-    print("base_plus_ext3", match.group(1), match.group(2))
-    return match.group(1), match.group(2)
+    # print("base_plus_ext2", base, ext[1:])
+    # print("base_plus_ext3", match.group(1), match.group(2))
+    return base, ext[1:]
 
 
 def valid_sample(sample: Dict[str, Any]) -> bool:
