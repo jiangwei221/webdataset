@@ -40,8 +40,8 @@ def base_plus_ext(path):
     if path.endswith("CLIP_score.npy") or path.endswith("input_ids.npy"):
         return match.group(1), match.group(2)
     base, ext = os.path.splitext(path)
-    logging.info(path, base, ext)
-    print(path, base, ext)
+    # logging.info(path, base, ext)
+    # print(path, base, ext)
     return base, ext[1:]
 
 
