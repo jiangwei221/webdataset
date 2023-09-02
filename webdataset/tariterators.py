@@ -36,6 +36,7 @@ def base_plus_ext(path):
     if not match:
         return None, None
     base, ext = os.path.splitext(path)
+    print(path, base, ext)
     return base, ext[1:]
 
 
