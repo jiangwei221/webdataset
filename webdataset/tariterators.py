@@ -37,6 +37,8 @@ def base_plus_ext(path):
     match = re.match(r"^((?:.*/|)[^.]+)[.]([^/]*)$", path)
     if not match:
         return None, None
+    if path.endswith("CLIP_score.npy") or path.endswith("input_ids.npy"):
+        return match.group(1), match.group(2)
     base, ext = os.path.splitext(path)
     logging.info(path, base, ext)
     print(path, base, ext)
