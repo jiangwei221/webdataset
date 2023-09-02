@@ -12,6 +12,8 @@ from typing import Any, Callable, Dict, Iterable, Iterator, Optional, Set, Tuple
 import random, re, tarfile, os
 
 import braceexpand
+from absl import logging
+
 
 from . import filters, gopen
 from .handlers import reraise_exception
@@ -36,6 +38,7 @@ def base_plus_ext(path):
     if not match:
         return None, None
     base, ext = os.path.splitext(path)
+    logging.info(path, base, ext)
     print(path, base, ext)
     return base, ext[1:]
 
