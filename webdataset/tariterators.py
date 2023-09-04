@@ -279,6 +279,9 @@ def tarfile_samples(
     files = tar_file_expander(
         streams, handler=handler, select_files=select_files, rename_files=rename_files
     )
+    print(next(files))
+    print(next(files))
+    print(next(files))
     samples = group_by_keys(files, handler=handler)
     return samples
 
