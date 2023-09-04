@@ -223,6 +223,7 @@ def group_by_keys(
     """
     current_sample = None
     for filesample in data:
+        print(current_sample.keys())
         try:
             assert isinstance(filesample, dict)
             fname, value = filesample["fname"], filesample["data"]
