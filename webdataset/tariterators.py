@@ -282,6 +282,12 @@ def tarfile_samples(
     print(next(files))
     print(next(files))
     print(next(files))
+    print(next(files))
+    print(next(files))
+    print(next(files))
+    print(next(files))
+    print(next(files))
+    print(next(files))
     samples = group_by_keys(files, handler=handler)
     return samples
 
