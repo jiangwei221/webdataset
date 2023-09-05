@@ -243,14 +243,14 @@ def group_by_keys(
                 continue
             if lcase:
                 suffix = suffix.lower()
-            if current_sample is None or prefix != current_sample["__key__"]:
+            if current_sample is None or prefix != current_sample["__key__"] or  suffix in current_sample:
                 if valid_sample(current_sample):
                     yield current_sample
                 current_sample = dict(__key__=prefix, __url__=filesample["__url__"])
-            if suffix in current_sample:
-                raise ValueError(
-                    f"{fname}: duplicate file name in tar file {suffix} {current_sample.keys()}"
-                )
+            # if suffix in current_sample:
+            #     raise ValueError(
+            #         f"{fname}: duplicate file name in tar file {suffix} {current_sample.keys()}"
+            #     )
             if suffixes is None or suffix in suffixes:
                 current_sample[suffix] = value
         except Exception as exn:
