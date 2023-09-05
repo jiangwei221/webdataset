@@ -40,8 +40,6 @@ def base_plus_ext(path):
     if path.endswith("CLIP_score.npy") or path.endswith("input_ids.npy"):
         return match.group(1), match.group(2)
     base, ext = os.path.splitext(path)
-    # logging.info(path, base, ext)
-    # print(path, base, ext)
     return base, ext[1:]
 
 
@@ -60,7 +58,6 @@ def valid_sample(sample: Dict[str, Any]) -> bool:
         and len(list(sample.keys())) > 0
         and not sample.get("__bad__", False)
     )
-    print(is_valid)
     return is_valid
 
 
@@ -225,14 +222,10 @@ def group_by_keys(
     """
     current_sample = None
     for filesample in data:
-        if current_sample is not None:
-            print(current_sample.keys())
         try:
             assert isinstance(filesample, dict)
             fname, value = filesample["fname"], filesample["data"]
-            print(fname)
             prefix, suffix = keys(fname)
-            print(prefix, suffix)
             if trace:
                 print(
                     prefix,
@@ -283,15 +276,6 @@ def tarfile_samples(
     files = tar_file_expander(
         streams, handler=handler, select_files=select_files, rename_files=rename_files
     )
-    # print(next(files))
-    # print(next(files))
-    # print(next(files))
-    # print(next(files))
-    # print(next(files))
-    # print(next(files))
-    # print(next(files))
-    # print(next(files))
-    # print(next(files))
     samples = group_by_keys(files, handler=handler)
     return samples
 
