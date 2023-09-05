@@ -54,12 +54,14 @@ def valid_sample(sample: Dict[str, Any]) -> bool:
     Returns:
         boolean indicating whether the sample is valid.
     """
-    return (
+    is_valid = (
         sample is not None
         and isinstance(sample, dict)
         and len(list(sample.keys())) > 0
         and not sample.get("__bad__", False)
     )
+    print(is_valid)
+    return is_valid
 
 
 # FIXME: UNUSED
