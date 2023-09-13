@@ -272,6 +272,8 @@ def tarfile_samples(
     Returns:
         stream of samples
     """
+    print("tarfile_samples", src)
+    assert 0
     streams = url_opener(src, handler=handler)
     files = tar_file_expander(
         streams, handler=handler, select_files=select_files, rename_files=rename_files
