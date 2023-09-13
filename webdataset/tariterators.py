@@ -225,6 +225,7 @@ def group_by_keys(
         try:
             assert isinstance(filesample, dict)
             fname, value = filesample["fname"], filesample["data"]
+            print("fname", fname)
             prefix, suffix = keys(fname)
             if trace:
                 print(
@@ -272,8 +273,8 @@ def tarfile_samples(
     Returns:
         stream of samples
     """
-    print("tarfile_samples", src)
-    assert 0
+    # print("tarfile_samples", src)
+    # assert 0
     streams = url_opener(src, handler=handler)
     files = tar_file_expander(
         streams, handler=handler, select_files=select_files, rename_files=rename_files
