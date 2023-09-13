@@ -227,6 +227,7 @@ def group_by_keys(
             fname, value = filesample["fname"], filesample["data"]
             print("fname", fname)
             print(filesample.keys())
+            print("__url__", filesample["__url__"])
             prefix, suffix = keys(fname)
             if trace:
                 print(
