@@ -225,9 +225,9 @@ def group_by_keys(
         try:
             assert isinstance(filesample, dict)
             fname, value = filesample["fname"], filesample["data"]
-            print("fname", fname)
-            print(filesample.keys())
-            print("__url__", filesample["__url__"])
+            # print("fname", fname)
+            # print(filesample.keys())
+            # print("__url__", filesample["__url__"])
             prefix, suffix = keys(fname)
             if trace:
                 print(
