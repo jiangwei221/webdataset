@@ -284,7 +284,7 @@ def tarfile_samples(
         streams, handler=handler, select_files=select_files, rename_files=rename_files
     )
     samples = group_by_keys(files, handler=handler)
-    print("tar_path", samples["tar_path"])
+    # print("tar_path", samples["tar_path"])
     return samples
 
 
